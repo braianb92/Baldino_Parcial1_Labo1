@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1558051811 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1558050799 /home/alumno/Documentos/Baldino/Baldino_Parcial1/orquesta.h
+
+1557951224 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/utn_strings.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_strings.h"
+
+1557951224 /home/alumno/Documentos/Baldino/Baldino_Parcial1/utn_strings.h
+
+1558051301 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+
+1558051301 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"instrumento.h"
+
+1558051171 /home/alumno/Documentos/Baldino/Baldino_Parcial1/instrumento.h
+
+1558051367 /home/alumno/Documentos/Baldino/Baldino_Parcial1/musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558049650 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"musico.h"
+
