@@ -6,6 +6,30 @@
 
 static int generarId(void);
 
+/** \brief  Adds an instrument with
+*           parameter values in an specific position.
+* \param    array Instrumento* Pointer to array of
+* \param    len int Array len of instrumento
+* \param    msgE char Shows an error message to be printed
+*           when a value is not valid.
+* \param    tries The times user can try to enter
+*           a valid value if something goes wrong.
+* \return   return (-1) if wrong, (0) if OK.
+* */
+int instrumento_preCarga(Instrumento* array,int len,int indexPosition,char* nombre,int tipo)
+{
+    int retorno=-1;
+    if((array!=NULL)&&(len>0))
+    {
+        strncpy(array[indexPosition].name,nombre,sizeof(array[indexPosition].name));
+        array[indexPosition].tipo=tipo;
+        array[indexPosition].idInstrumento=generarId();
+        array[indexPosition].isEmpty=0;
+        retorno=0;
+    }
+    return retorno;
+}
+
 
 /** \brief  add values entered by the user to
 *           an existing array of instrumento
@@ -23,6 +47,7 @@ int instrumento_addInstrumento(Instrumento* array,int len,char* msgE,int tries)
     int indexFree;
     char bufferName[50];
     int auxTipo;
+    char stringTipo[30];
     int retorno=-1;
     if((array!=NULL)&&(len>0))
     {
@@ -36,6 +61,25 @@ int instrumento_addInstrumento(Instrumento* array,int len,char* msgE,int tries)
             array[indexFree].tipo=auxTipo;
             array[indexFree].idInstrumento=generarId();
             array[indexFree].isEmpty=0;
+            switch(auxTipo)
+            {
+               case 1:
+                   strncpy(stringTipo,"Cuerda",sizeof(stringTipo));
+                   break;
+                case 2:
+                    strncpy(stringTipo,"Viento-Madera",sizeof(stringTipo));
+                    break;
+                case 3:
+                    strncpy(stringTipo,"Viento-Metal",sizeof(stringTipo));
+                    break;
+                case 4:
+                    strncpy(stringTipo,"Percusion",sizeof(stringTipo));
+                    break;
+            }
+            printf("\nNombre: %s\nTipo: %s\nCodigo Instrumento: %d",
+                   array[indexFree].name,
+                   stringTipo,
+                   array[indexFree].idInstrumento);
             retorno=0;
         }
     }
@@ -145,6 +189,139 @@ int instrumento_removeInstrumento(Instrumento* array, int len,char* msgE,int tri
     return retorno;
 }
 
+/** \brief  Sort the elements in the array of Instrumento,
+*           UP or DOWN according to its order parameter
+*           by Surname and Sector.
+* \param    array Instrumento* Pointer to array of Instrumento
+* \param    len int Array len of Instrumento
+* \param    order Int number that indicates
+*           the growing order [1]
+*           the decreasing order[0]
+* \return   return (-1) if wrong, (0) if OK.
+**/
+int Instrumento_sortInstrumentoByNombre(Instrumento* array, int len,int order)///1up 0down
+{
+    int i;
+    int j;
+    int retorno=-1;
+    Instrumento buffer;
+    if(array!=NULL && len>0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+
+            for(j=i+1;j<len;j++)
+            {
+
+                if((order==1)&&(strcmp(array[i].name,array[j].name)>0))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+                else if((order==0)&&(strcmp(array[i].name,array[j].name)<0))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief  Sort the elements in the array of Instrumento,
+*           UP or DOWN according to its order parameter
+*           by Surname and Sector.
+* \param    array Instrumento* Pointer to array of Instrumento
+* \param    len int Array len of Instrumento
+* \param    order Int number that indicates
+*           the growing order [1]
+*           the decreasing order[0]
+* \return   return (-1) if wrong, (0) if OK.
+**/
+int Instrumento_sortInstrumentoByTipo(Instrumento* array, int len,int order)///1up 0down
+{
+    int i;
+    int j;
+    int retorno=-1;
+    Instrumento buffer;
+    if(array!=NULL && len>0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+
+            for(j=i+1;j<len;j++)
+            {
+
+                if((order==1)&&(array[i].tipo>array[j].tipo))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+                else if((order==0)&&(array[i].tipo<array[j].tipo))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief  Sort the elements in the array of employees,
+*           UP or DOWN according to its order parameter
+*           by Surname and Sector.
+* \param    arrayEmployee Employee* Pointer to array of employees
+* \param    lenEmployee int Array len of emplyee
+* \param    order Int number that indicates
+*           the growing order [1]
+*           the decreasing order[0]
+* \return   return (-1) if wrong, (0) if OK.
+**/
+int instrumento_sortInstrumentosByNombreEficiente(Instrumento* arrayInstrumento,
+                                                        int lenInstrumento,int order)///1up 0down
+{
+    int i;
+    int flagNoEstaOrdenado=1;
+    int retorno=-1;
+    Instrumento buffer;
+    if(arrayInstrumento!=NULL && lenInstrumento>0 && (order==0 || order==1))
+    {
+        while(flagNoEstaOrdenado==1)
+        {
+            flagNoEstaOrdenado=0;
+            for(i=1;i<lenInstrumento;i++)
+            {
+                if((order==1)&&(strcmp(arrayInstrumento[i-1].name,arrayInstrumento[i].name)>0))///Creciente
+                {
+                    buffer=arrayInstrumento[i-1];
+                    arrayInstrumento[i-1]=arrayInstrumento[i];
+                    arrayInstrumento[i]=buffer;
+                    flagNoEstaOrdenado=1;
+                    retorno=0;
+                }
+                else if((order==0)&&(strcmp(arrayInstrumento[i-1].name,arrayInstrumento[i].name)<0))///Decreciente
+                {
+                    buffer=arrayInstrumento[i-1];
+                    arrayInstrumento[i-1]=arrayInstrumento[i];
+                    arrayInstrumento[i]=buffer;
+                    flagNoEstaOrdenado=1;
+                    retorno=0;
+                }
+            }
+        }
+    }
+    return retorno;
+}
 
 /** \brief  Indicates that all positions in the array are empty
 *           by setting the flag isEmpty in 0 in all positions.
@@ -217,6 +394,20 @@ int instrumento_findInstrumentoById(Instrumento* array, int len, int idE)
     return ret;
 }
 
+int instrumento_findInstrumentoByTipo(Instrumento* array, int len, int idE)
+{
+    int i;
+    int ret=-1;
+    for(i=0;i<len;i++)
+    {
+        if((array[i].isEmpty==0)&&(array[i].tipo==idE))
+        {
+            ret=i;
+        }
+    }
+    return ret;
+}
+
 
 /** \brief  Asks the user to enter an ID.
 * \param    array Instrumento* Pointer to array of instrumento
@@ -253,16 +444,31 @@ int instrumento_getID (Instrumento* array,int len,char* msgE,int tries)
 int instrumento_printInstrumento(Instrumento* array,int len)
 {
     int i;
+    char stringTipo[30];
     int flag=1;
     for(i=0;i<len;i++)
     {
         if(array[i].isEmpty==0)
         {
-            printf("\nID: %d\nNombre: %s\nTipo Cuerda(1)/Viento-madera(2)/"
-                    "Viento-metal(3)/Percusion(4): %d\n-------\n",
+            switch(array[i].tipo)
+            {
+               case 1:
+                   strncpy(stringTipo,"Cuerda",sizeof(stringTipo));
+                   break;
+                case 2:
+                    strncpy(stringTipo,"Viento-Madera",sizeof(stringTipo));
+                    break;
+                case 3:
+                    strncpy(stringTipo,"Viento-Metal",sizeof(stringTipo));
+                    break;
+                case 4:
+                    strncpy(stringTipo,"Percusion",sizeof(stringTipo));
+                    break;
+            }
+            printf("\nCodigo Instrumento: %d\nNombre: %s\nTipo: %s\n-------\n",
                    array[i].idInstrumento,
                    array[i].name,
-                   array[i].tipo);
+                   stringTipo);
             flag=0;
         }
     }
@@ -279,6 +485,6 @@ int instrumento_printInstrumento(Instrumento* array,int len)
 **/
 static int generarId(void)
 {
-    static int idEmp=0;
+    static int idEmp=1;
     return idEmp++;
 }

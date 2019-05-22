@@ -6,6 +6,22 @@
 
 static int generarId(void);
 
+int orquesta_preCarga(Orquesta* array,int len,int indexPosition,char* nombre,
+                      char* lugar,int tipo)
+{
+    int retorno=-1;
+    if((array!=NULL)&&(len>0))
+    {
+        strncpy(array[indexPosition].name,nombre,sizeof(array[indexPosition].name));
+        strncpy(array[indexPosition].lugar,lugar,sizeof(array[indexPosition].lugar));
+        array[indexPosition].tipo=tipo;
+        array[indexPosition].idOrquesta=generarId();
+        array[indexPosition].isEmpty=0;
+        retorno=0;
+    }
+    return retorno;
+}
+
 /** \brief  add values entered by the user to
 *           an existing array of orquesta
 *           in an empty position.
@@ -23,12 +39,13 @@ int orquesta_addOrquesta(Orquesta* array,int len,char* msgE,int tries)
     char bufferName[30];
     char bufferLugar[30];
     int auxTipo;
+    char stringTipo[30];
     int retorno=-1;
     if((array!=NULL)&&(len>0))
     {
         indexFree=orquesta_findFree(array,len);
-        if((indexFree!=-1)&&(!getStringLetras(bufferName,"\nIngrese Nombre: ",msgE,tries))
-            &&(!getStringLetras(bufferLugar,"\nIngrese Lugar: ",msgE,tries))
+        if((indexFree!=-1)&&(!getStringAlphanumeric(bufferName,"\nIngrese Nombre: ",msgE,tries))
+            &&(!getStringAlphanumeric(bufferLugar,"\nIngrese Lugar: ",msgE,tries))
             &&(!getIntInRange(&auxTipo,"\nIngrese Tipo: Sinfonica(1)/Filarmonica(2)"
                 "Camara(3) ","\nDATO NO VALIDO\n",1,3,tries)))
         {
@@ -37,6 +54,23 @@ int orquesta_addOrquesta(Orquesta* array,int len,char* msgE,int tries)
             array[indexFree].tipo=auxTipo;
             array[indexFree].idOrquesta=generarId();
             array[indexFree].isEmpty=0;
+            switch(auxTipo)
+            {
+               case 1:
+                   strncpy(stringTipo,"Sinfonica",sizeof(stringTipo));
+                   break;
+                case 2:
+                    strncpy(stringTipo,"Filarmonica",sizeof(stringTipo));
+                    break;
+                case 3:
+                    strncpy(stringTipo,"Camara",sizeof(stringTipo));
+                    break;
+            }
+            printf("\nNombre: %s\nLugar: %s\nTipo: %s\nCodigo Orquesta: %d",
+                   array[indexFree].name,
+                   array[indexFree].lugar,
+                   stringTipo,
+                   array[indexFree].idOrquesta);
             retorno=0;
         }
     }
@@ -86,7 +120,7 @@ int orquesta_alter(Orquesta* array, int len,char* generalMsgE,int exitAlterMenuN
                     {
                         case 1:
                         {
-                            if(!getStringLetras(bufferName,"\nIngrese NUEVO Nombre: ",generalMsgE,tries))
+                            if(!getStringAlphanumeric(bufferName,"\nIngrese NUEVO Nombre: ",generalMsgE,tries))
                             {
                                 strncpy(array[posOfID].name,bufferName,sizeof(bufferName));
                                 retorno=0;
@@ -95,7 +129,7 @@ int orquesta_alter(Orquesta* array, int len,char* generalMsgE,int exitAlterMenuN
                         }
                         case 2:
                         {
-                            if(!getStringLetras(bufferLugar,"\nIngrese NUEVO Lugar: ",generalMsgE,tries))
+                            if(!getStringAlphanumeric(bufferLugar,"\nIngrese NUEVO Lugar: ",generalMsgE,tries))
                             {
                                 strncpy(array[posOfID].lugar,bufferLugar,sizeof(bufferLugar));
                                 retorno=0;
@@ -162,7 +196,7 @@ int orquesta_removeOrquesta(Orquesta* array, int len,char* msgE,int tries)
 *           the decreasing order[0]
 * \return   return (-1) if wrong, (0) if OK.
 **/
-int orquesta_sortOrquesta(Orquesta* array, int len,int order)///1up 0down
+int orquesta_sortOrquestaByLugar(Orquesta* array, int len,int order)///1up 0down
 {
     int i;
     int j;
@@ -196,6 +230,170 @@ int orquesta_sortOrquesta(Orquesta* array, int len,int order)///1up 0down
     return retorno;
 }
 
+
+/** \brief  Sort the elements in the array of orquesta,
+*           UP or DOWN according to its order parameter
+*           by Surname and Sector.
+* \param    array Orquesta* Pointer to array of orquesta
+* \param    len int Array len of orquesta
+* \param    order Int number that indicates
+*           the growing order [1]
+*           the decreasing order[0]
+* \return   return (-1) if wrong, (0) if OK.
+**/
+int orquesta_sortOrquestaByNombre(Orquesta* array, int len,int order)///1up 0down
+{
+    int i;
+    int j;
+    int retorno=-1;
+    Orquesta buffer;
+    if(array!=NULL && len>0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+
+            for(j=i+1;j<len;j++)
+            {
+
+                if((order==1)&&(strcmp(array[i].name,array[j].name)>0))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+                else if((order==0)&&(strcmp(array[i].name,array[j].name)<0))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+/** \brief  Sort the elements in the array of orquesta,
+*           UP or DOWN according to its order parameter
+*           by Surname and Sector.
+* \param    array Orquesta* Pointer to array of orquesta
+* \param    len int Array len of orquesta
+* \param    order Int number that indicates
+*           the growing order [1]
+*           the decreasing order[0]
+* \return   return (-1) if wrong, (0) if OK.
+**/
+int orquesta_sortOrquestaByTipo(Orquesta* array, int len,int order)///1up 0down
+{
+    int i;
+    int j;
+    int retorno=-1;
+    Orquesta buffer;
+    if(array!=NULL && len>0)
+    {
+        for(i=0;i<len-1;i++)
+        {
+
+            for(j=i+1;j<len;j++)
+            {
+
+                if((order==1)&&(array[i].tipo>array[j].tipo))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+                else if((order==0)&&(array[i].tipo<array[j].tipo))
+                {
+                    buffer=array[i];
+                    array[i]=array[j];
+                    array[j]=buffer;
+                    retorno=0;
+                }
+            }
+        }
+    }
+    return retorno;
+}
+
+int orquesta_sortOrquestaByTipoMismoLugar(Orquesta* arrayOrquesta,int lenOrquesta,int order)
+{
+    int i;
+    Orquesta buffer;
+
+    for(i=1;i<lenOrquesta;i++)
+    {
+        if(strcmp(arrayOrquesta[i-1].lugar,arrayOrquesta[i].lugar)==0)
+        {
+            if((order==1)&&(arrayOrquesta[i-1].tipo>arrayOrquesta[i].tipo))
+            {
+                buffer=arrayOrquesta[i-1];
+                arrayOrquesta[i-1]=arrayOrquesta[i];
+                arrayOrquesta[i]=buffer;
+            }
+            else if((order==0)&&(arrayOrquesta[i-1].tipo<arrayOrquesta[i].tipo))
+            {
+                buffer=arrayOrquesta[i-1];
+                arrayOrquesta[i-1]=arrayOrquesta[i];
+                arrayOrquesta[i]=buffer;
+            }
+        }
+    }
+    return 0;
+}
+
+/** \brief  Sort the elements in the array of employees,
+*           UP or DOWN according to its order parameter
+*           by Surname and Sector.
+* \param    arrayEmployee Employee* Pointer to array of employees
+* \param    lenEmployee int Array len of emplyee
+* \param    order Int number that indicates
+*           the growing order [1]
+*           the decreasing order[0]
+* \return   return (-1) if wrong, (0) if OK.
+**/
+int orquesta_sortOrquestasByLugaryTipoEficiente(Orquesta* arrayOrquesta,
+                                                    int lenOrquesta,int order)///1up 0down
+{
+    int i;
+    int flagNoEstaOrdenado=1;
+    int retorno=-1;
+    Orquesta buffer;
+    if(arrayOrquesta!=NULL && lenOrquesta>0 && (order==0 || order==1))
+    {
+        while(flagNoEstaOrdenado==1)
+        {
+            flagNoEstaOrdenado=0;
+            for(i=1;i<lenOrquesta;i++)
+            {
+                if((order==1)&&(strcmp(arrayOrquesta[i-1].lugar,arrayOrquesta[i].lugar)>0))///Creciente
+                {
+                    buffer=arrayOrquesta[i-1];
+                    arrayOrquesta[i-1]=arrayOrquesta[i];
+                    arrayOrquesta[i]=buffer;
+                    flagNoEstaOrdenado=1;
+                    retorno=0;
+                }
+                else if((order==0)&&(strcmp(arrayOrquesta[i-1].lugar,arrayOrquesta[i].lugar)<0))///Decreciente
+                {
+                    buffer=arrayOrquesta[i-1];
+                    arrayOrquesta[i-1]=arrayOrquesta[i];
+                    arrayOrquesta[i]=buffer;
+                    flagNoEstaOrdenado=1;
+                    retorno=0;
+                }
+            }
+        }
+        if(flagNoEstaOrdenado==0)
+        {
+            orquesta_sortOrquestaByTipoMismoLugar(arrayOrquesta,lenOrquesta,order);
+        }
+    }
+    return retorno;
+}
 
 /** \brief  Indicates that all positions in the array are empty
 *           by setting the flag isEmpty in 0 in all positions.
@@ -303,17 +501,29 @@ int orquesta_getID (Orquesta* array,int len,char* msgE,int tries)
 int orquesta_printOrquesta(Orquesta* array,int len)
 {
     int i;
+    char stringTipo[30];
     int flag=1;
     for(i=0;i<len;i++)
     {
         if(array[i].isEmpty==0)
         {
-            printf("\nID: %d\nNombre: %s\nLugar: %s\nTipo Sinfonica(1)/"
-                    "Filarmonica(2)/Camara(3): %d\n-------\n",
+            switch(array[i].tipo)
+            {
+               case 1:
+                   strncpy(stringTipo,"Sinfonica",sizeof(stringTipo));
+                   break;
+                case 2:
+                    strncpy(stringTipo,"Filarmonica",sizeof(stringTipo));
+                    break;
+                case 3:
+                    strncpy(stringTipo,"Camara",sizeof(stringTipo));
+                    break;
+            }
+            printf("\nCodigo Orquesta: %d\nNombre: %s\nLugar: %s\nTipo: %s\n-------\n",
                    array[i].idOrquesta,
                    array[i].name,
                    array[i].lugar,
-                   array[i].tipo);
+                   stringTipo);
             flag=0;
         }
     }
@@ -330,6 +540,6 @@ int orquesta_printOrquesta(Orquesta* array,int len)
 **/
 static int generarId(void)
 {
-    static int idEmp=0;
+    static int idEmp=1;
     return idEmp++;
 }
