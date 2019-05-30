@@ -1,0 +1,265 @@
+# depslib dependency file v1.0
+1558051811 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1558050799 /home/alumno/Documentos/Baldino/Baldino_Parcial1/orquesta.h
+
+1557951224 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/utn_strings.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_strings.h"
+
+1557951224 /home/alumno/Documentos/Baldino/Baldino_Parcial1/utn_strings.h
+
+1558051301 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+
+1558051301 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"instrumento.h"
+
+1558051171 /home/alumno/Documentos/Baldino/Baldino_Parcial1/instrumento.h
+
+1558051367 /home/alumno/Documentos/Baldino/Baldino_Parcial1/musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558049650 source:/home/alumno/Documentos/Baldino/Baldino_Parcial1/musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"musico.h"
+
+1558197345 source:c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"instrumento.h"
+
+1558139651 c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\utn_strings.h
+
+1558197345 c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\instrumento.h
+
+1558204000 source:c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1558197345 c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\orquesta.h
+
+1558203746 c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558203746 source:c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"musico.h"
+
+1558197345 source:c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+
+1558139651 source:c:\users\baldi\documents\utn_workspace\testing_code\modelo_parcial\utn_strings.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_strings.h"
+
+1558485968 source:c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"informes.h"
+	"utn_strings.h"
+
+1558304473 c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\informes.h
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1558206286 c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\orquesta.h
+
+1558207639 c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\instrumento.h
+
+1558296899 c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558139651 c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\utn_strings.h
+
+1558207338 source:c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"instrumento.h"
+
+1558305261 source:c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+	"informes.h"
+
+1558296899 source:c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"musico.h"
+
+1558206286 source:c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+
+1558139651 source:c:\users\baldi\documents\utn_workspace\modelos\modelo_parcial\utn_strings.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_strings.h"
+
+1558840756 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"informes.h"
+	"utn_strings.h"
+
+1558840349 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\informes.h
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1559141966 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\orquesta.h
+
+1558565058 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\instrumento.h
+
+1559156336 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558139651 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\utn_strings.h
+
+1558839235 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"instrumento.h"
+
+1559156352 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+	"informes.h"
+
+1559156359 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"musico.h"
+
+1559143104 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+
+1558139651 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_parcial1\utn_strings.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_strings.h"
+
+1558840756 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"informes.h"
+	"utn_strings.h"
+
+1558840349 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\informes.h
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+
+1559141966 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\orquesta.h
+
+1558565058 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\instrumento.h
+
+1559156336 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\musico.h
+	"orquesta.h"
+	"instrumento.h"
+
+1558139651 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\utn_strings.h
+
+1559158045 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\instrumento.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"instrumento.h"
+
+1559156352 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+	"instrumento.h"
+	"musico.h"
+	"informes.h"
+
+1559158248 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\musico.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"musico.h"
+
+1559157810 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\orquesta.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"utn_strings.h"
+	"orquesta.h"
+
+1558139651 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\baldino_recu1\v_1\utn_strings.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn_strings.h"
+
