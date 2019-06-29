@@ -1,0 +1,4 @@
+	Cantidad: de fotos reveladas totales: 48422
+	Cantidad: de ventas por un monto mayor a $150: 468
+	Cantidad: de ventas por un monto mayor a $300: 447
+	Cantidad: de fotos Polaroids reveladas: 0
