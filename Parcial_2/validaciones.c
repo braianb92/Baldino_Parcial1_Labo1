@@ -79,11 +79,12 @@ int isAlphanumeric (char* pointerString)
     int i=0;
     while(pointerString[i]!='\0')
     {
-        if((pointerString[i]!=' ')&&(pointerString[i]!='.')
+        if((pointerString[i]!='.')&&(pointerString[i]!='/')
            &&(pointerString[i]<'a'||pointerString[i]>'z')
            &&(pointerString[i]<'A'||pointerString[i]>'Z')
            &&(pointerString[i]<'0' || pointerString[i]>'9')
-           &&(pointerString[i]<'_' || pointerString[i]>'-'))
+           &&(pointerString[i]!='_')&&(pointerString[i]!='-')
+           )
         {
             return 0;
         }
@@ -97,11 +98,13 @@ int isFecha (char* pointerString)
     int i=0;
     while(pointerString[i]!='\0')
     {
-        if(
-           (pointerString[i]<'0' || pointerString[i]>'9')
-           &&(pointerString[i]<'/'))
+        if((pointerString[i]<'0' || pointerString[i]>'9'))
         {
             return 0;
+        }
+        else if((pointerString[2]=='/')&&(pointerString[5]=='/'))
+        {
+            return 1;
         }
         i++;
     }

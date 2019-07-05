@@ -33,7 +33,7 @@ int parser_loadFromText(FILE* pFile, LinkedList* listaVentas)
                                                                                     buffercuit);
             if(cantidadDatos==6)
             {
-                pVenta = venta_newParametros(bufferDate,bufferTipo,
+                pVenta = venta_newParametros(bufferId,bufferDate,bufferTipo,
                                             bufferCantidad,bufferprecioUnitario,buffercuit);
                 if(pVenta != NULL)
                 {

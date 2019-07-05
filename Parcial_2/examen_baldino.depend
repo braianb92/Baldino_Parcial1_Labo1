@@ -144,3 +144,76 @@
 	"Baldino_String_Geters.h"
 	"validaciones.h"
 
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\baldino_string_geters.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\baldino_string_geters.h
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\validaciones.h
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"venta.h"
+	"controller.h"
+	"Parser.h"
+	"Baldino_String_Geters.h"
+
+1562367606 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\venta.h
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\controller.h
+	"LinkedList.h"
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\linkedlist.h
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\parser.h
+	"LinkedList.h"
+
+1562369809 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1562366036 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\informe.h
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"controller.h"
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1562366433 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+
+1562368640 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1562368761 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+

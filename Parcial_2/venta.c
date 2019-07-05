@@ -5,25 +5,41 @@
 #include "Baldino_String_Geters.h"
 #include "validaciones.h"
 
-static int generarId(void);
+//static int generarId(void);
 
 Venta* venta_new()
 {
     return (Venta*) malloc(sizeof(Venta));
 }
 
-Venta* venta_newParametros(char* dateStr,char* tipoStr,char* cantidadStr,char* precioStr,char* cuitStr)
+Venta* venta_newParametros(char* idStr,char* dateStr,char* tipoStr,char* cantidadStr,char* precioStr,char* cuitStr)
 {
 
     Venta* pVenta=venta_new();
     if(pVenta!=NULL)
     {
-        venta_setDate(pVenta,dateStr);
-        venta_setTipo(pVenta,tipoStr);
-        venta_setCantidad(pVenta,cantidadStr);
-        venta_setPrecioUnitario(pVenta,precioStr);
-        venta_setCuit(pVenta,cuitStr);
-        pVenta->id=generarId();
+
+        if(!venta_setDate(pVenta,dateStr)&&
+           !venta_setTipo(pVenta,tipoStr)&&
+           !venta_setCantidad(pVenta,cantidadStr)&&
+           !venta_setPrecioUnitario(pVenta,precioStr)&&
+           !venta_setCuit(pVenta,cuitStr)&&
+           !venta_setId(pVenta,idStr))
+           {
+               return pVenta;
+           }
+           else
+           {
+               pVenta=NULL;
+           }
+           /*
+           venta_setDate(pVenta,dateStr);
+           venta_setTipo(pVenta,tipoStr);
+           venta_setCantidad(pVenta,cantidadStr);
+           venta_setPrecioUnitario(pVenta,precioStr);
+           venta_setCuit(pVenta,cuitStr);
+           venta_setId(pVenta,idStr);
+           */
     }
     return pVenta;
 }
@@ -61,7 +77,7 @@ int venta_setDate(Venta* this, char* value)
     int retorno = -1;
     if(this != NULL && value!=NULL && isFecha(value))
     {
-        if(strlen(value)>=3)
+        if(strlen(value)==10)
         {
             strncpy(this->date,value,sizeof(this->date));
             retorno = 0;
@@ -218,8 +234,9 @@ int venta_getPrecioUnitario(Venta* this, float* value)
     }
     return retorno;
 }
+/*
 static int generarId(void)
 {
     static int idVenta=1;
     return idVenta++;
-}
+}*/

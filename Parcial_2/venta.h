@@ -4,15 +4,15 @@
 typedef struct
 {
     int id;
-    char date[128];
-    char tipo[128];
+    char date[200];
+    char tipo[200];
     int cantidad;
     float precioUnitario;
-    char cuit[30];
+    char cuit[200];
 }Venta;
 
 Venta* venta_new();
-Venta* venta_newParametros(char* dateStr,char* tipoStr,char* cantidadStr,char* precioStr,char* cuitStr);
+Venta* venta_newParametros(char* idStr,char* dateStr,char* tipoStr,char* cantidadStr,char* precioStr,char* cuitStr);
 int venta_delete();
 
 int venta_setId(Venta* this, char* value);
