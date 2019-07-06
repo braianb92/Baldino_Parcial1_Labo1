@@ -38,6 +38,7 @@ int empleado_getTrabajo(Empleado* this,char* value);
 int empleado_setHorasTrabajadas(Empleado* this,char* value);
 int empleado_getHorasTrabajadas(Empleado* this,int* value);
 
+int empleado_setSueldoFloat(Empleado* this,float value);
 int empleado_setSueldo(Empleado* this,char* value);
 int empleado_getSueldo(Empleado* this,float* value);
 

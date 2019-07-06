@@ -5,12 +5,11 @@
 #include "LinkedList.h"
 #include "informe.h"
 
-//PRODUCTO-CLIENTE-VEHICULO
 
 int main()
 {
     LinkedList* listaVentas=ll_newLinkedList();
     controller_ventaLoadFromText("data.csv",listaVentas);
-    generarInforme("informe.txt",listaVentas);
+    generarInforme_venta("informe.txt",listaVentas);
     return 0;
 }

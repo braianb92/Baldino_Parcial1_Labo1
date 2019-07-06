@@ -193,6 +193,21 @@ int empleado_getHorasTrabajadas(Empleado* this, int* value)
     return retorno;
 }
 
+int empleado_setSueldoFloat(Empleado* this, float value)
+{
+    int retorno = -1;
+
+    if(this != NULL)
+    {
+        if(value>0)
+        {
+            this->sueldo = value;
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
 int empleado_setSueldo(Empleado* this, char* value)
 {
     float auxSueldo;

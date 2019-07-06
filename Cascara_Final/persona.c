@@ -14,7 +14,8 @@ Persona* persona_new()
 
 Persona* persona_newParametros(char* idStr,char* birthStr,char* nombreStr,
                                char* apellidoStr,char* dniStr,char* cuitStr,
-                               char* trabajoStr)
+                               char* trabajoStr,char* dayStr,char* monthStr,
+                               char* yearStr)
 {
 
     Persona* pPersona=persona_new();
@@ -27,7 +28,8 @@ Persona* persona_newParametros(char* idStr,char* birthStr,char* nombreStr,
            !persona_setApellido(pPersona,apellidoStr)&&
            !persona_setDni(pPersona,dniStr)&&
            !persona_setCuit(pPersona,cuitStr)&&
-           !persona_setTrabajo(pPersona,trabajoStr))
+           !persona_setTrabajo(pPersona,trabajoStr)&&
+           !persona_setDateInteger(pPersona,dayStr,monthStr,yearStr))
            {
                return pPersona;
            }
@@ -67,6 +69,17 @@ int persona_setId(Persona* this, char* value)
     return retorno;
 }
 
+int persona_getId(Persona* this, int* value)
+{
+    int retorno = -1;
+    if(this != NULL && value!=NULL)
+    {
+        *value=this->id;
+        retorno = 0;
+    }
+    return retorno;
+}
+
 int persona_setBirth(Persona* this, char* value)
 {
     int retorno = -1;
@@ -91,6 +104,49 @@ int persona_getBirth(Persona* this, char* value)
     }
     return retorno;
 }
+
+int persona_setDateInteger(Persona* this, char* dayStr,char* monthStr,char* yearStr)
+{
+    int auxDay;
+    int auxMonth;
+    int auxYear;
+    int retorno = -1;
+
+    if(this != NULL
+       && isNumber(dayStr)
+       && isNumber(monthStr)
+       && isNumber(yearStr))
+    {
+        auxDay=atoi(dayStr);
+        auxMonth=atoi(monthStr);
+        auxYear=atoi(yearStr);
+        if(isDate(auxDay,auxMonth,auxYear))
+        {
+            this->day = auxDay;
+            this->month = auxMonth;
+            this->year = auxYear;
+            retorno = 0;
+        }
+    }
+    return retorno;
+}
+
+int persona_getDateInteger(Persona* this, int* pDay,int* pMonth,int* pYear)
+{
+    int retorno = -1;
+    if(this != NULL
+       &&pDay!=NULL
+       &&pMonth!=NULL
+       &&pYear!=NULL)
+    {
+        *pDay=this->day;
+        *pMonth=this->month;
+        *pYear=this->year;
+        retorno = 0;
+    }
+    return retorno;
+}
+
 
 int persona_setCuit(Persona* this, char* value)
 {
@@ -202,16 +258,6 @@ int persona_getDni(Persona* this, char* value)
     return retorno;
 }
 
-int persona_getId(Persona* this, int* value)
-{
-    int retorno = -1;
-    if(this != NULL && value!=NULL)
-    {
-        *value=this->id;
-        retorno = 0;
-    }
-    return retorno;
-}
 
 
 int persona_sortByBirth(void* personaA,void* personaB)
@@ -234,6 +280,8 @@ int persona_sortByBirth(void* personaA,void* personaB)
     }
     return igual;
 }
+
+
 
 /*
 static int generarId(void)

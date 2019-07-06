@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include "venta.h"
+#include "empleado.h"
+#include "persona.h"
+#include "producto.h"
 #include "LinkedList.h"
 #include "informe.h"
 
-int generarInforme(char* path , LinkedList* arrayList)
+int generarInforme_venta(char* path , LinkedList* arrayList)
 {
     int size;
     int size150;
@@ -110,4 +113,57 @@ int cantidadReveladoMayorA300(void* p)
     }
 
     return ret;
+}
+
+//----------------------
+
+//---con ll_map-----
+int calcularSueldoBasico(void* p)
+{
+    Empleado* pEmpleado=p;
+    float sueldoBasico=250000;
+    int horasTrabajadas;
+    float auxSueldo;
+    int retorno=-1;
+
+    if(!empleado_getHorasTrabajadas(pEmpleado,&horasTrabajadas))
+    {
+        auxSueldo=sueldoBasico*horasTrabajadas;
+        empleado_setSueldoFloat(pEmpleado,auxSueldo);
+        retorno=0;
+    }
+    return retorno;
+}
+
+//----con ll_count---
+int sueldosTotales (void* p)
+{
+    Empleado* pEmpleado=p;
+    float auxSueldo;
+    int retorno=0;
+
+    if(!empleado_getSueldo(pEmpleado,&auxSueldo))
+    {
+        retorno=auxSueldo;
+    }
+    return retorno;
+}
+
+int promedioSueldos(LinkedList* lista,float* promedio)
+{
+    int cantidadEmpleados;
+    int sumatoriaSueldos;
+    int retorno=-1;
+
+    if(lista!=NULL&&promedio!=NULL)
+    {
+        cantidadEmpleados=ll_len(lista);
+        if(cantidadEmpleados>0)
+        {
+            sumatoriaSueldos=ll_count(lista,sueldosTotales);
+            *promedio=sumatoriaSueldos/cantidadEmpleados;
+            retorno=0;
+        }
+    }
+    return retorno;
 }

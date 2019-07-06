@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include "LinkedList.h"
 #include "venta.h"
+#include "empleado.h"
+#include "persona.h"
+#include "producto.h"
 
-int parser_loadFromText(FILE* pFile, LinkedList* listaVentas)
+int parser_loadVentaFromText(FILE* pFile, LinkedList* lista)
 {
     char bufferId[4096];
     char bufferDate[4096];
@@ -15,7 +18,7 @@ int parser_loadFromText(FILE* pFile, LinkedList* listaVentas)
     Venta *pVenta;
     int retorno=-1;
 
-    if(pFile != NULL && listaVentas!=NULL)
+    if(pFile != NULL && lista!=NULL)
     {
         fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n",  bufferId,
                                                                 bufferDate,
@@ -37,7 +40,7 @@ int parser_loadFromText(FILE* pFile, LinkedList* listaVentas)
                                             bufferCantidad,bufferprecioUnitario,buffercuit);
                 if(pVenta != NULL)
                 {
-                    if(!ll_add(listaVentas,pVenta))
+                    if(!ll_add(lista,pVenta))
                     {
                         retorno=0;
                     }

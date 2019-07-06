@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "venta.h"
+#include "empleado.h"
+#include "persona.h"
+#include "producto.h"
 #include "controller.h"
 #include "Parser.h"
-#include "Baldino_String_Geters.h"
 
 int controller_ventaLoadFromText(char* path , LinkedList* arrayList)
 {
@@ -14,7 +16,7 @@ int controller_ventaLoadFromText(char* path , LinkedList* arrayList)
         pFile = fopen(path,"r");
         if(pFile!=NULL)
         {
-            if(!parser_loadFromText(pFile , arrayList))
+            if(!parser_loadVentaFromText(pFile , arrayList))
             {
                 fclose(pFile);
                 retorno=0;
@@ -23,5 +25,3 @@ int controller_ventaLoadFromText(char* path , LinkedList* arrayList)
     }
     return retorno;
 }
-
-
