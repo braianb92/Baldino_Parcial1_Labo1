@@ -1,0 +1,294 @@
+# depslib dependency file v1.0
+1561044643 source:c:\users\baldi\desktop\examen\examen_baldino\baldino_string_geters.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1561044643 c:\users\baldi\desktop\examen\examen_baldino\baldino_string_geters.h
+
+1561044643 c:\users\baldi\desktop\examen\examen_baldino\validaciones.h
+
+1561674852 source:c:\users\baldi\desktop\examen\examen_baldino\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"venta.h"
+	"controller.h"
+	"Parser.h"
+	"Baldino_String_Geters.h"
+
+1561673991 c:\users\baldi\desktop\examen\examen_baldino\venta.h
+
+1561673827 c:\users\baldi\desktop\examen\examen_baldino\controller.h
+	"LinkedList.h"
+
+1561678139 c:\users\baldi\desktop\examen\examen_baldino\linkedlist.h
+
+1561045786 c:\users\baldi\desktop\examen\examen_baldino\parser.h
+	"LinkedList.h"
+
+1561678058 source:c:\users\baldi\desktop\examen\examen_baldino\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"LinkedList.h"
+
+1561678142 source:c:\users\baldi\desktop\examen\examen_baldino\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561676243 source:c:\users\baldi\desktop\examen\examen_baldino\main.c
+	<stdio.h>
+	<stdlib.h>
+	"controller.h"
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1561677534 c:\users\baldi\desktop\examen\examen_baldino\informe.h
+
+1561674096 source:c:\users\baldi\desktop\examen\examen_baldino\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+
+1561672843 source:c:\users\baldi\desktop\examen\examen_baldino\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1561673993 source:c:\users\baldi\desktop\examen\examen_baldino\venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1561044643 source:c:\users\baldi\desktop\back\baldino_string_geters.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1561044643 c:\users\baldi\desktop\back\baldino_string_geters.h
+
+1561679327 c:\users\baldi\desktop\back\validaciones.h
+
+1561674852 source:c:\users\baldi\desktop\back\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"venta.h"
+	"controller.h"
+	"Parser.h"
+	"Baldino_String_Geters.h"
+
+1561679598 c:\users\baldi\desktop\back\venta.h
+
+1561673827 c:\users\baldi\desktop\back\controller.h
+	"LinkedList.h"
+
+1561678139 c:\users\baldi\desktop\back\linkedlist.h
+
+1561045786 c:\users\baldi\desktop\back\parser.h
+	"LinkedList.h"
+
+1561680076 source:c:\users\baldi\desktop\back\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1561678142 source:c:\users\baldi\desktop\back\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561676243 source:c:\users\baldi\desktop\back\main.c
+	<stdio.h>
+	<stdlib.h>
+	"controller.h"
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1561680192 c:\users\baldi\desktop\back\informe.h
+
+1561679598 source:c:\users\baldi\desktop\back\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+
+1561679334 source:c:\users\baldi\desktop\back\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1561679598 source:c:\users\baldi\desktop\back\venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\baldino_string_geters.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\baldino_string_geters.h
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\validaciones.h
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"venta.h"
+	"controller.h"
+	"Parser.h"
+	"Baldino_String_Geters.h"
+
+1562367606 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\venta.h
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\controller.h
+	"LinkedList.h"
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\linkedlist.h
+
+1562364341 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\parser.h
+	"LinkedList.h"
+
+1562369809 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1562366036 c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\informe.h
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562364341 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"controller.h"
+	"venta.h"
+	"LinkedList.h"
+	"informe.h"
+
+1562366433 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"venta.h"
+
+1562368640 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1562368761 source:c:\users\baldi\documents\utn_workspace\baldino_parcial1_labo1\parcial_2\venta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"venta.h"
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1562883781 source:c:\users\baldi\desktop\cascara_final\baldino_string_geters.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1562364341 c:\users\baldi\desktop\cascara_final\baldino_string_geters.h
+
+1562364341 c:\users\baldi\desktop\cascara_final\validaciones.h
+
+1562883716 source:c:\users\baldi\desktop\cascara_final\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"llamada.h"
+	"controller.h"
+	"Parser.h"
+
+1562882127 c:\users\baldi\desktop\cascara_final\llamada.h
+
+1562883563 c:\users\baldi\desktop\cascara_final\controller.h
+	"LinkedList.h"
+
+1562887691 c:\users\baldi\desktop\cascara_final\linkedlist.h
+
+1562881829 c:\users\baldi\desktop\cascara_final\parser.h
+	"LinkedList.h"
+
+1562888261 source:c:\users\baldi\desktop\cascara_final\informe.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"llamada.h"
+	"LinkedList.h"
+	"informe.h"
+	"Baldino_String_Geters.h"
+
+1562888261 c:\users\baldi\desktop\cascara_final\informe.h
+
+1562887691 source:c:\users\baldi\desktop\cascara_final\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562882196 source:c:\users\baldi\desktop\cascara_final\llamada.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"llamada.h"
+	"Baldino_String_Geters.h"
+	"validaciones.h"
+
+1562890005 source:c:\users\baldi\desktop\cascara_final\main.c
+	<stdio.h>
+	<stdlib.h>
+	"controller.h"
+	"llamada.h"
+	"LinkedList.h"
+	"informe.h"
+	"Baldino_String_Geters.h"
+
+1562882220 source:c:\users\baldi\desktop\cascara_final\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"llamada.h"
+
+1562437498 source:c:\users\baldi\desktop\cascara_final\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
